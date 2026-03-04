@@ -24,13 +24,19 @@ class UserController extends Controller
     ]);
     //    dd($validated);
 
-User::create([
+User::insert([
 'name'=>$validated['name'] ,
 'email'=>$validated['email'] ,
 'password'=>$validated['password'] 
 
 ]);
 return redirect('/hello');
+
+// $user = new User();
+// $user->name = $validated['name'];
+// $user->email = $validated['email'];
+// $user->password = $validated['password'];
+// $user->save();
 
     }
 }

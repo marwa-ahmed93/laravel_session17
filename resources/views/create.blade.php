@@ -23,7 +23,7 @@
  
 
 
-<form method="post" action="{{url('/store_user')}}">
+<form method="post" action="{{route('store')}}">
     @csrf
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">name</label>
