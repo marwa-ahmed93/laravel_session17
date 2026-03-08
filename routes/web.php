@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CarController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProvisionServer;
@@ -29,8 +30,16 @@ Route::get('/hello',function(){
 
 Route::get('show',[ProvisionServer::class]);
 Route::get('showPosts' , [PostController::class , 'show']);
+Route::get('showUser/{id}' , [PostController::class , 'index'])->name('showUser');
 
 
+Route::get('createImg',[CarController::class ,'create']);
+
+Route::post('storeData',[CarController::class,'store']);
+
+Route::get('showCars',[CarController::class,'show']);
+Route::get('deleteCars/{id}',[CarController::class,'delete'])->name('deleteCar');
+Route::get('restoreCar/{id}',[CarController::class,'restoreCar'])->name('restoreCar');
 
 
 // Route::resource('photos', [PhotoController::class]);

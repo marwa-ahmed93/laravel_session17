@@ -13,23 +13,28 @@
             <th>email</th>
             <!-- <td>password</td> -->
             <th><a href="">show</a></th>
+            <th><a href="">restore</a></th>
      
      </thead>
 
 
         
     <tbody>
-        @foreach($posts as $post)
+        @foreach($cars as $car)
         <tr>
             <td>{{$loop->iteration}}</td>
-            <td>{{$post->name}}</td>
-            <td>{{$post->email}}</td>
-            <td><a href="{{route('showUser',$post->id)}}">Show</a></td>
+            <td>{{$car->name}}</td>
+            <td>{{$car->color}}</td>
+            <td>{{$car->price}}</td>
+            <td><img style="width: 150px;" src="{{ asset('storage/'.$car->image) }}" alt=""></td>
+            <td><a href="{{route('showUser',$car->id)}}">Show</a></td>
+            <td><a href="{{route('deleteCar',$car->id)}}">Delete</a></td>
+            <td><a href="{{route('restoreCar',$car->id)}}">restore</a></td>
         </tr>
         @endforeach
     </tbody>
     </table>
-    {{$posts->links()}}
+    
     
 
 </body>

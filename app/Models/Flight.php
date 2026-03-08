@@ -8,5 +8,6 @@ class Flight extends Model
 {
     //
     // Flight::gaet();
-   
+    // protected $fillable = [];
+   protected $guarded = [];
 }
